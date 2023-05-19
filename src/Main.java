@@ -7,7 +7,6 @@ public class Main {
         baseCalc1.substraction(50, 40);
         baseCalc1.multiplication(8,8);
         baseCalc1.division(100, 10);
-        //ProgramerCalctulator progCacl = new ProgramerCalctulator();
 
         FinancialCalculator financialCacl1 = new FinancialCalculator();
         financialCacl1.summation(8, 25);
@@ -23,5 +22,7 @@ public class Main {
 
         ProgramerCalctulator progrCalc1 = new ProgramerCalctulator();
         progrCalc1.convertToHex(79);
-        }
+
+        System.out.println("Easiest realization");
+    }
 }
