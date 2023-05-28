@@ -1,28 +1,40 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        BaseCalculator baseCalc1 = new BaseCalculator();
-        baseCalc1.summation(5,10);
-        baseCalc1.substraction(50, 40);
-        baseCalc1.multiplication(8,8);
-        baseCalc1.division(100, 10);
 
-        FinancialCalculator financialCacl1 = new FinancialCalculator();
-        financialCacl1.summation(8, 25);
-        financialCacl1.simplePercentCalc(500, 20);
-        financialCacl1.complexPercentCalc(500, 20, 5, 4);
+            System.out.println("Please, input first number: ");
+            BaseCalculator baseCalc1 = new BaseCalculator();
 
-        EngineerCalculator engCalc = new EngineerCalculator();
-        engCalc.multiplication(80, 2);
-        engCalc.caclCosinus(50);
+            double input1 = Exceptions.isANumber();
+            System.out.println("Please, second number: ");
+            double input2 = Exceptions.isANumber();
 
-        AccountantCalculator accountantCalc1 = new AccountantCalculator();
-        accountantCalc1.caclNDS(900);
+            baseCalc1.summation(input1, input2);
+            baseCalc1.substraction(input1, input2);
+            baseCalc1.multiplication(input1, input2);
+            baseCalc1.division(input1, input2);
 
-        ProgramerCalctulator progrCalc1 = new ProgramerCalctulator();
-        progrCalc1.convertToHex(79);
+            System.out.println("\nFinancial calculator: ");
+            FinancialCalculator financialCacl1 = new FinancialCalculator();
+            financialCacl1.division(8,0);
+            financialCacl1.simplePercentCalc(200, 20);
+            financialCacl1.complexPercentCalc(500, 20, 5, 4);
 
-        System.out.println("Easiest realization");
+            System.out.println("\nEngineer's calculator: ");
+            EngineerCalculator engCalc = new EngineerCalculator();
+            engCalc.multiplication(input1, input2 );
+            engCalc.caclCosinus(input1);
+
+            System.out.println("\nAccountant's calculator: ");
+            AccountantCalculator accountantCalc1 = new AccountantCalculator();
+            accountantCalc1.caclNDS(input1);
+
+            System.out.println("\nProgrammer's calculator: ");
+            ProgramerCalctulator progrCalc1 = new ProgramerCalctulator();
+            progrCalc1.convertToHex((int)input1);
     }
 }
